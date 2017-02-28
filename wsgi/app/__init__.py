@@ -10,8 +10,8 @@ mytasks = [
 ,
 {'id': 2,'task': u'Finish first API',
 'session': u'Week 7','done': False}]
-@app.route('/todo/api/tasks', methods=['GET'])
+@app.route('/api', methods=['GET'])
 
-def get_tasks():
+def api():
 	return jsonify({'tasks': mytasks})
 #from app import views
