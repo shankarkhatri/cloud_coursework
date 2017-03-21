@@ -1,10 +1,10 @@
-from app import app 
+from app import app
 from flask_pymongo import PyMongo
 from flask import jsonify
 import os
 
 app.config['MONGO_DBNAME'] = os.environ['OPENSHIFT_APP_NAME']
-app.config['MONGO_URI'] = os.environ['OPENSHIFT_MONGODB_DB_URL']
+app.config['MONGO_URI'] = os.environ['OPENSHIFT_MONGODB_DB_URL'] + os.environ['OPENSHIFT_APP_NAME']
 
 mongo = PyMongo(app)
 
@@ -27,5 +27,3 @@ def getallpersonnel():
 def insert_into_db():
         collection = mongo.db.test
 	collection.insert_one({'Name': 'TestingName', 'Profession': 'student'})
-
-
