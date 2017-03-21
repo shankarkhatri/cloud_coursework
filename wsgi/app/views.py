@@ -2,6 +2,8 @@ from app import app
 from flask import render_template, request
 import unirest
 from forms import MessageForm
+from app import simple
+from app import database
 
 @app.route('/')
 @app.route('/index/')
@@ -26,4 +28,3 @@ def emotion_post():
   		}
 	)
 	return render_template("my_form.html",mood=response.body['result']['sentiment'],form=MessageForm())
-
