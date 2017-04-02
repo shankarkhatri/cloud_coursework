@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}View Database
+{% endblock %}
+{% block content %}
+  {% for value in result %}
+    {{ value}}
+    <br>
+  {% endfor %}
+
+  click <a href='/logout'> here</a> to logout
+{% endblock %}

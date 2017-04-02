@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Logged in successfully
+{% endblock %}
+{% block content %}
+  <p> Logged in as: <b>{{ id }}</b> </p>
+  <br> You can access the database now
+  <br> 1 - <a href="/database/personnel"> Personnel</a>
+  <br> 2 - <a href="/database/users"> Users</a> 
+{% endblock %}

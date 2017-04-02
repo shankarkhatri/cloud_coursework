@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Login
+{% endblock %}
+{% block content %}
+<div class="col s6">
+  <form action='login' method='POST'>
+        <input type='text' name='email' id='email' placeholder='Username'></input>
+        <input type='password' name='pw' id='pw' placeholder='Password'></input>
+        <input type='submit' name='submit'></input>
+      </form>
+    </div>
+{% endblock %}
