@@ -59,4 +59,3 @@ def polynomial():
         to=to
     )
     return encode_utf8(html)
-
