@@ -4,6 +4,7 @@ import unirest
 from forms import MessageForm
 from app import simple
 from app import database
+from app import login
 from flask_navigation import Navigation
 
 nav = Navigation(app)

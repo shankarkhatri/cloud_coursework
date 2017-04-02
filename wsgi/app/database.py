@@ -1,6 +1,10 @@
 from app import app
 from flask_pymongo import PyMongo
+from flask import render_template, request
 from flask import jsonify
+from bokeh.util.string import encode_utf8
+import flask_login
+import flask
 import os
 
 app.config['MONGO_DBNAME'] = os.environ['OPENSHIFT_APP_NAME']
@@ -14,23 +18,30 @@ def get_all_databases():
 
 
 @app.route('/database/personnel', methods=['GET'])
+@flask_login.login_required
 def getallpersonnel():
 	collection = mongo.db.test
 	output = []
 	for doc in collection.find():
 		output.append({'Who' : doc['Name'], 'Job Role' : doc['Profession']})
 
-	return jsonify({'result' : output})
+
+	html = flask.render_template('database_view.html',result =output)
+
+	return encode_utf8(html)
 
 
 @app.route('/database/users', methods=['GET'])
+@flask_login.login_required
 def getallusers():
 	collection = mongo.db.users
 	output = []
 	for doc in collection.find():
 		output.append({'Username' : doc['username'], 'Account Type' : doc['type']})
 
-	return jsonify({'result' : output})
+	html = flask.render_template('database_view.html',result =output)
+
+	return encode_utf8(html)
 
 
 @app.route('/database/add', methods=['GET'])
