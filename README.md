@@ -4,11 +4,6 @@ Cloud Coursework
 This git repository is for cloud computing Coursework ECS781P
 
 
-Running on OpenShift
-----------------------------
-
-Create an account at https://www.openshift.com
-
 ### Openshift Link
 
 To run the app go at http://sk323apitest1-ecs781pdev2.apps.devcloud.eecs.qmul.ac.uk/
